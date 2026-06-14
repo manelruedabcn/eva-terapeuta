@@ -2202,10 +2202,10 @@ fadeEls.forEach(el => fadeObserver.observe(el));
         document.getElementById('qualifyCalendly').addEventListener('click', function() {
             window.open('https://calendly.com/REEMPLAZAR-CON-USUARIO-EVA/llamada-informativa-15min', '_blank', 'noopener');
         });
-        // Alternativa: si Eva prefiere popup embebido en lugar de redirección, puede usar el script widget de Calendly:
-        // <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-        // <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        // Y sustituir window.open por: Calendly.initPopupWidget({url: 'https://calendly.com/...'});
+        // Alternativa: si Eva prefiere popup embebido en lugar de redirección,
+        // puede usar el widget de Calendly así:
+        // Calendly.initPopupWidget({url: 'https://calendly.com/REEMPLAZAR-CON-USUARIO-EVA/llamada-informativa-15min'});
+        // Para ello necesita cargar el CSS y JS de Calendly en el <head> (ver documentación de Calendly).
         body.scrollTop = 0;
     }
 
