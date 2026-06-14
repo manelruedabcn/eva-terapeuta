@@ -1858,7 +1858,7 @@
                 <button class="qualify-opt" data-q2="maybe">Quiero saber más antes de decidir</button>
             </div>
         </div>
-        <!-- Paso final: cualificada → Calendly + WhatsApp -->
+        <!-- Paso final: cualificada → WhatsApp (Calendly pendiente de configurar) -->
         <div class="qualify-step" id="qStepFinal">
             <p class="qualify-step-label">¡Perfecto!</p>
             <p class="qualify-question">La llamada es el siguiente paso</p>
@@ -2151,8 +2151,7 @@ fadeEls.forEach(el => fadeObserver.observe(el));
             '<div class="faq-chat-answer" style="margin-bottom:.75rem;">' +
             'Gracias.<br><br>Eva ofrece una <strong>llamada informativa de 15 minutos</strong> para resolver tus dudas y valorar juntas si este acompañamiento es para ti:<br><br>Elige cómo prefieres hablar con ella:' +
             '</div>' +
-            '<button class="faq-chat-question" id="qualifyCalendly" style="background:var(--turquesa);color:#fff;font-weight:500;">📅 Llamada informativa (15 min)</button>' +
-            '<button class="faq-chat-question" id="qualifyWhatsapp" style="background:var(--turquesa);color:#fff;font-weight:500;">💬 Hablar por WhatsApp</button>' +
+            '<button class="faq-chat-question" id="qualifyWhatsapp" style="background:var(--turquesa);color:#fff;font-weight:500;">💬 Hablar con Eva por WhatsApp</button>' +
             '<button class="faq-chat-back" id="faqChatBack" style="margin-top:.25rem;">← Volver a preguntas</button>';
         body.innerHTML = html;
 
@@ -2161,13 +2160,12 @@ fadeEls.forEach(el => fadeObserver.observe(el));
             renderQuestions();
             body.scrollTop = 0;
         });
-        document.getElementById('qualifyCalendly').addEventListener('click', function() {
-            window.open('#', '_blank', 'noopener');
-            // TODO: sustituir # por el enlace real de Calendly
-        });
         document.getElementById('qualifyWhatsapp').addEventListener('click', function() {
-            window.open('https://wa.me/34629764705', '_blank', 'noopener');
+            window.open('https://wa.me/34629764705?text=Hola%20Eva%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n', '_blank', 'noopener');
         });
+        // TODO: Si Eva quiere conectar Calendly más adelante, descomentar:
+        // document.getElementById('qualifyCalendly')... crear botón con enlace a:
+        // https://calendly.com/REEMPLAZAR-CON-USUARIO-EVA/llamada-informativa-15min
         body.scrollTop = 0;
     }
 
