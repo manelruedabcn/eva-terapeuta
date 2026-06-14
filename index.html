@@ -1867,14 +1867,18 @@
                 <button class="qualify-opt" data-q2="maybe">Quiero saber más antes de decidir</button>
             </div>
         </div>
-        <!-- Paso final: cualificada → WhatsApp + opciones -->
+        <!-- Paso final: cualificada → WhatsApp + Calendly + opciones -->
         <div class="qualify-step" id="qStepFinal">
             <p class="qualify-step-label">¡Perfecto!</p>
             <p class="qualify-question">Elige cómo prefieres seguir</p>
-            <p class="qualify-sub">Puedes hablarme directamente o ir paso a paso.</p>
+            <p class="qualify-sub">Puedes hablarme directamente o reservar una llamada.</p>
+            <!-- TODO: Eva debe crear su cuenta de Calendly (plan gratuito), configurar un evento "Llamada informativa" de 15 min, y reemplazar la URL de arriba por su URL real de Calendly antes de publicar. -->
             <div class="qualify-final-actions">
                 <a href="https://wa.me/34629764705?text=Hola%20Eva%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n" class="btn btn-primary" target="_blank" rel="noopener">
                     💬 Hablar con Eva por WhatsApp
+                </a>
+                <a href="https://calendly.com/REEMPLAZAR-CON-USUARIO-EVA/llamada-informativa-15min" class="btn btn-outline" target="_blank" rel="noopener">
+                    📅 Reservar llamada informativa (15 min)
                 </a>
                 <a href="#leadmagnet" class="btn btn-outline">
                     📖 Quiero la guía gratuita primero
@@ -2175,7 +2179,9 @@ fadeEls.forEach(el => fadeObserver.observe(el));
             'Gracias.<br><br>Eva ofrece una <strong>llamada informativa de 15 minutos</strong> para resolver tus dudas y valorar juntas si este acompañamiento es para ti:<br><br>Elige cómo prefieres hablar con ella:' +
             '</div>' +
             '<button class="faq-chat-question" id="qualifyWhatsapp" style="background:var(--turquesa);color:#fff;font-weight:500;">💬 Hablar con Eva por WhatsApp</button>' +
+            '<button class="faq-chat-question" id="qualifyCalendly" style="background:var(--turquesa);color:#fff;font-weight:500;">📅 Reservar llamada (15 min)</button>' +
             '<button class="faq-chat-back" id="faqChatBack" style="margin-top:.25rem;">← Volver a preguntas</button>';
+        // TODO: Eva debe crear su cuenta de Calendly (plan gratuito), configurar un evento "Llamada informativa" de 15 min, y reemplazar la URL más abajo por su URL real de Calendly antes de publicar.
         body.innerHTML = html;
 
         document.getElementById('faqChatBack').addEventListener('click', function() {
@@ -2186,9 +2192,13 @@ fadeEls.forEach(el => fadeObserver.observe(el));
         document.getElementById('qualifyWhatsapp').addEventListener('click', function() {
             window.open('https://wa.me/34629764705?text=Hola%20Eva%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n', '_blank', 'noopener');
         });
-        // TODO: Si Eva quiere conectar Calendly más adelante, descomentar:
-        // document.getElementById('qualifyCalendly')... crear botón con enlace a:
-        // https://calendly.com/REEMPLAZAR-CON-USUARIO-EVA/llamada-informativa-15min
+        document.getElementById('qualifyCalendly').addEventListener('click', function() {
+            window.open('https://calendly.com/REEMPLAZAR-CON-USUARIO-EVA/llamada-informativa-15min', '_blank', 'noopener');
+        });
+        // Alternativa: si Eva prefiere popup embebido en lugar de redirección, puede usar el script widget de Calendly:
+        // <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+        // <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        // Y sustituir window.open por: Calendly.initPopupWidget({url: 'https://calendly.com/...'});
         body.scrollTop = 0;
     }
 
