@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesiones Grupales de Sanación Energética | Eva Terapeuta — Barcelona y Garraf</title>
+    <meta name="description" content="Sesiones grupales de sanación energética y liberación de bloqueos con Eva. Presencial en Barcelona y Garraf. Grupos reducidos, organizaciones y particulares. Mediante LNT® y Barras de Access.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.evaterapeuta.com/sesiones-grupales.html">
+    <link rel="icon" type="image/png" href="assets/images/ISOTIPO EVA.png">
+
+    <!-- Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sesiones Grupales de Sanación Energética | Eva Terapeuta — Barcelona y Garraf">
+    <meta property="og:description" content="Sesiones grupales de sanación energética y liberación de bloqueos. Grupos reducidos, organizaciones y particulares. Presencial en Barcelona y Garraf. Mediante LNT® y Barras de Access.">
+    <meta property="og:image" content="https://www.evaterapeuta.com/assets/images/LOGO%20HOME.png">
+    <meta property="og:url" content="https://www.evaterapeuta.com/sesiones-grupales.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        :root {
+            --crema: #f7f3ec;
+            --crema-oscuro: #e8e2d8;
+            --turquesa: #6A9EC4;
+            --turquesa-hover: #5692b8;
+            --azul-medio: #4a6278;
+            --azul-suave: #C1DEF4;
+            --texto: #2d2d2d;
+            --texto-suave: #4a4a4a;
+            --texto-muy-suave: #6a6a6a;
+            --blanco: #ffffff;
+            --borde: #bdd0df;
+            --borde-claro: #d0e2f0;
+            --dorado: #c9a96e;
+            --sombra-sm: 0 1px 3px rgba(0,0,0,.04);
+            --sombra-md: 0 4px 20px rgba(0,0,0,.06);
+            --sombra-lg: 0 8px 40px rgba(0,0,0,.08);
+            --radio-sm: 8px;
+            --radio: 12px;
+            --radio-lg: 20px;
+            --radio-xl: 28px;
+            --max-width: 1040px;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--texto);
+            background: var(--blanco);
+            line-height: 1.7;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            font-weight: 500;
+            line-height: 1.2;
+            color: var(--texto);
+        }
+        h2 {
+            font-size: clamp(1.7rem, 3.8vw, 2.4rem);
+            letter-spacing: -0.005em;
+        }
+        h3 { font-size: 1.25rem; font-weight: 500; }
+        p { color: var(--texto-suave); margin-bottom: 1rem; }
+        a { color: var(--turquesa); text-decoration: none; transition: color .2s; }
+        a:hover { color: var(--turquesa-hover); }
+
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+        section { padding: 5rem 0; }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.95rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+            cursor: pointer;
+            border: none;
+            transition: all .25s ease;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .btn-primary {
+            background: var(--turquesa);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(106,158,196,.25);
+        }
+        .btn-primary:hover {
+            background: var(--turquesa-hover);
+            box-shadow: 0 6px 24px rgba(106,158,196,.35);
+            transform: translateY(-1px);
+            color: #fff;
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--turquesa);
+            border: 1.5px solid var(--turquesa);
+        }
+        .btn-outline:hover {
+            background: rgba(106,158,196,.06);
+            color: var(--turquesa-hover);
+        }
+
+        /* Nav */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(255,255,255,.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid transparent;
+            transition: border-color .3s, background .3s;
+        }
+        .nav.scrolled { border-bottom-color: var(--borde-claro); background: rgba(255,255,255,.97); }
+        .nav-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 1rem;
+            gap: 22px;
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            z-index: 2;
+        }
+        .nav-brand img {
+            display: block;
+            height: auto;
+        }
+        .nav-brand .brand-logo {
+            width: auto;
+            height: 83px;
+        }
+        .nav-links { display: flex; align-items: center; gap: 2.25rem; list-style: none; flex-wrap: wrap; justify-content: center; }
+        .nav-links a {
+            color: var(--texto-muy-suave);
+            font-size: 0.81rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            padding: 0.35rem 0;
+            border-radius: 0;
+            transition: all .2s;
+        }
+        .nav-links a:hover { color: var(--texto); background: none; text-decoration: none; }
+
+        /* Hero minimal */
+        .hero-mini {
+            padding: 10rem 0 3rem;
+            background: linear-gradient(180deg, #f7f3ec 0%, #ffffff 100%);
+            text-align: center;
+        }
+        .hero-mini .container { max-width: 820px; }
+        .hero-mini .hero-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            padding: 0.35rem 1.2rem;
+            border-radius: 50px;
+            margin-top: 40px;
+            margin-bottom: 2.65rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--texto);
+            color: rgba(255,255,255,.75);
+            padding: 3rem 0 2rem;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+        footer .container { position: relative; z-index: 1; text-align: center; }
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,.7);
+            font-size: 0.88rem;
+            transition: color .2s;
+        }
+        .footer-links a:hover { color: #fff; text-decoration: none; }
+        .footer-disclaimer {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,.45);
+            margin-top: 0.75rem;
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 3.5rem 0; }
+            .nav-inner { padding: 1rem 1.5rem 0.5rem; gap: 14px; }
+            .nav-brand .brand-logo { height: 63px; }
+            .nav-brand { gap: 10px; }
+            .nav-links { gap: 1rem; }
+            .nav-links a { font-size: 0.75rem; }
+            .hero-mini { padding: 7.5rem 0 2.5rem; }
+        }
+
+        /* ===================== SESIONES GRUPALES ===================== */
+
+        .seccion-grupales {
+          padding: 5rem 1.5rem 4rem;
+          max-width: 900px;
+          margin: 0 auto;
+        }
+
+        /* Pill / etiqueta discreta */
+        .grupales-pill-wrap {
+          text-align: center;
+          margin-bottom: 1.2rem;
+        }
+        .grupales-pill {
+          display: inline-block;
+          font-size: 0.72rem;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          padding: 0.3rem 1rem;
+          border-radius: 999px;
+          border: 1px solid var(--turquesa, #7ec8c8);
+          color: var(--turquesa, #7ec8c8);
+          background: transparent;
+        }
+
+        /* Cabecera */
+        .grupales-header {
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+        .grupales-titulo {
+          font-size: clamp(1.8rem, 4vw, 2.6rem);
+          font-weight: 600;
+          margin-bottom: 1rem;
+          color: var(--texto);
+        }
+        .grupales-subtitulo {
+          font-size: 1.05rem;
+          line-height: 1.75;
+          color: var(--texto-suave, var(--texto));
+          max-width: 640px;
+          margin: 0 auto;
+        }
+
+        /* Separador orgánico */
+        .grupales-separador {
+          width: 180px;
+          margin: 0 auto 3.5rem;
+          color: var(--turquesa, #7ec8c8);
+        }
+        .grupales-separador svg {
+          width: 100%;
+          height: auto;
+        }
+
+        /* Bloques internos */
+        .grupales-bloque {
+          margin-bottom: 4rem;
+        }
+        .grupales-bloque-alt {
+          background: transparent;
+        }
+        .grupales-bloque-titulo {
+          font-size: 1.25rem;
+          font-weight: 600;
+          text-align: center;
+          margin-bottom: 2rem;
+          color: var(--texto);
+        }
+
+        /* Cards — ¿Para quién? */
+        .grupales-cards-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.5rem;
+        }
+        .grupales-card {
+          border: 1px solid rgba(0,0,0,0.08);
+          border-radius: 14px;
+          padding: 2rem 1.5rem;
+          text-align: center;
+          background: transparent;
+          transition: box-shadow 0.3s ease, transform 0.3s ease;
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        .grupales-card.visible {
+          opacity: 1;
+          transform: translateY(0);
+          transition: opacity 0.55s ease, transform 0.55s ease, box-shadow 0.3s ease;
+        }
+        .grupales-card:hover {
+          box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+          transform: translateY(-3px);
+        }
+        .grupales-card-icono {
+          width: 40px;
+          height: 40px;
+          margin: 0 auto 1rem;
+          color: var(--turquesa, #7ec8c8);
+        }
+        .grupales-card-icono svg {
+          width: 100%;
+          height: 100%;
+        }
+        .grupales-card-titulo {
+          font-size: 1rem;
+          font-weight: 600;
+          margin-bottom: 0.6rem;
+          color: var(--texto);
+        }
+        .grupales-card-texto {
+          font-size: 0.9rem;
+          line-height: 1.7;
+          color: var(--texto-suave, var(--texto));
+        }
+
+        /* Timeline */
+        .grupales-timeline {
+          list-style: none;
+          padding: 0;
+          margin: 0 auto 1.5rem;
+          max-width: 480px;
+          counter-reset: none;
+        }
+        .grupales-timeline-item {
+          display: flex;
+          align-items: center;
+          gap: 1.2rem;
+          padding: 0.9rem 0;
+          border-bottom: 1px solid rgba(0,0,0,0.06);
+          opacity: 0;
+          transform: translateX(-12px);
+        }
+        .grupales-timeline-item.visible {
+          opacity: 1;
+          transform: translateX(0);
+          transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .grupales-timeline-item:last-child {
+          border-bottom: none;
+        }
+        .grupales-timeline-num {
+          flex-shrink: 0;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          border: 1.5px solid var(--turquesa, #7ec8c8);
+          color: var(--turquesa, #7ec8c8);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.85rem;
+          font-weight: 600;
+        }
+        .grupales-timeline-texto {
+          font-size: 0.95rem;
+          color: var(--texto);
+        }
+        .grupales-timeline-nota {
+          text-align: center;
+          font-size: 0.88rem;
+          line-height: 1.7;
+          color: var(--texto-suave, var(--texto));
+          font-style: italic;
+          margin-top: 1rem;
+        }
+
+        /* Beneficios */
+        .grupales-beneficios-grid {
+          list-style: none;
+          padding: 0;
+          margin: 0 auto;
+          max-width: 640px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.9rem 2rem;
+        }
+        .grupales-beneficio {
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
+          font-size: 0.95rem;
+          color: var(--texto);
+        }
+        .grupales-check {
+          color: var(--turquesa, #7ec8c8);
+          font-size: 1rem;
+          flex-shrink: 0;
+        }
+
+        /* Modalidades */
+        .grupales-modalidades-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.5rem;
+        }
+        .grupales-modalidad {
+          padding: 1.8rem 1.4rem;
+          border-radius: 12px;
+          border: 1px solid rgba(0,0,0,0.08);
+          background: transparent;
+          transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .grupales-modalidad:hover {
+          box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+          transform: translateY(-2px);
+        }
+        .grupales-modalidad-titulo {
+          font-size: 1rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          color: var(--texto);
+        }
+        .grupales-modalidad-texto {
+          font-size: 0.88rem;
+          line-height: 1.65;
+          color: var(--texto-suave, var(--texto));
+        }
+
+        /* CTA */
+        .grupales-cta-wrap {
+          text-align: center;
+          padding: 3rem 2rem;
+          border-radius: 16px;
+          border: 1px solid rgba(0,0,0,0.07);
+          margin-top: 1rem;
+        }
+        .grupales-cta-titulo {
+          font-size: 1.4rem;
+          font-weight: 600;
+          margin-bottom: 0.8rem;
+          color: var(--texto);
+        }
+        .grupales-cta-texto {
+          font-size: 0.95rem;
+          line-height: 1.7;
+          color: var(--texto-suave, var(--texto));
+          max-width: 500px;
+          margin: 0 auto 1.8rem;
+        }
+        .grupales-cta-botones {
+          display: flex;
+          gap: 1rem;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+          .grupales-cards-grid,
+          .grupales-modalidades-grid {
+            grid-template-columns: 1fr;
+          }
+          .grupales-beneficios-grid {
+            grid-template-columns: 1fr;
+          }
+          .grupales-card:hover,
+          .grupales-modalidad:hover {
+            transform: none;
+          }
+        }
+
+        /* ===================== FIN SESIONES GRUPALES ===================== */
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-brand" aria-label="Eva Terapeuta — Inicio">
+            <img src="assets/images/LOGO HOME.png" alt="Eva Terapeuta" class="brand-logo" width="150" height="42">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+
+<!-- HERO MINI -->
+<section class="hero-mini">
+    <div class="container">
+        <span class="hero-badge" style="background:var(--turquesa);color:#fff;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:0.3rem 1rem;border-radius:999px;display:inline-block;">LNT® · Método Schwiderski</span>
+    </div>
+</section>
+
+<!-- SESIONES GRUPALES -->
+<section id="grupales" style="background:var(--crema);padding-top:0;">
+  <div class="container">
+
+    <!-- Pill -->
+    <div class="grupales-pill-wrap">
+      <span class="grupales-pill">Presencial · Grupos reducidos · Organizaciones y particulares</span>
+    </div>
+
+    <!-- Cabecera -->
+    <div class="grupales-header">
+      <h2 class="grupales-titulo">Sesiones Grupales</h2>
+      <p class="grupales-subtitulo">Un espacio para parar, reconectar y liberar lo que ya no te sirve. Acompaño procesos de sanación energética y liberación de bloqueos en grupo — en un entorno seguro y respetuoso, mediante LNT® y Barras de Access adaptadas al contexto grupal.</p>
+    </div>
+
+    <!-- Separador orgánico -->
+    <div class="grupales-separador">
+      <svg viewBox="0 0 180 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 6 Q 30 0, 60 6 T 120 6 T 178 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <circle cx="90" cy="6" r="2.5" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <!-- ¿Para quién? -->
+    <div class="grupales-bloque">
+      <h3 class="grupales-bloque-titulo">¿Para quién son estas sesiones?</h3>
+      <div class="grupales-cards-grid">
+
+        <div class="grupales-card" data-delay="0">
+          <div class="grupales-card-icono">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <h4 class="grupales-card-titulo">Personas</h4>
+          <p class="grupales-card-texto">Para quienes desean reducir el estrés, recuperar energía, mejorar su bienestar emocional o simplemente regalarse un espacio para sí mismas.</p>
+        </div>
+
+        <div class="grupales-card" data-delay="120">
+          <div class="grupales-card-icono">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h4 class="grupales-card-titulo">Grupos y colectivos</h4>
+          <p class="grupales-card-texto">Asociaciones, grupos privados, entidades sociales y espacios comunitarios que desean ofrecer una experiencia diferente de bienestar y conexión.</p>
+        </div>
+
+        <div class="grupales-card" data-delay="240">
+          <div class="grupales-card-icono">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <path d="M8 21h8"/>
+              <path d="M12 17v4"/>
+            </svg>
+          </div>
+          <h4 class="grupales-card-titulo">Organizaciones</h4>
+          <p class="grupales-card-texto">Empresas, centros cívicos, ayuntamientos y organizaciones que quieren promover el bienestar de las personas a través de actividades grupales.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="grupales-bloque">
+      <h3 class="grupales-bloque-titulo">¿Qué ocurre durante una sesión?</h3>
+      <ol class="grupales-timeline">
+        <li class="grupales-timeline-item" data-delay="0">
+          <span class="grupales-timeline-num">1</span>
+          <span class="grupales-timeline-texto">Bienvenida y presentación</span>
+        </li>
+        <li class="grupales-timeline-item" data-delay="100">
+          <span class="grupales-timeline-num">2</span>
+          <span class="grupales-timeline-texto">Espacio de conexión y presencia</span>
+        </li>
+        <li class="grupales-timeline-item" data-delay="200">
+          <span class="grupales-timeline-num">3</span>
+          <span class="grupales-timeline-texto">Sesión grupal LNT®</span>
+        </li>
+        <li class="grupales-timeline-item" data-delay="300">
+          <span class="grupales-timeline-num">4</span>
+          <span class="grupales-timeline-texto">Integración de la experiencia</span>
+        </li>
+        <li class="grupales-timeline-item" data-delay="400">
+          <span class="grupales-timeline-num">5</span>
+          <span class="grupales-timeline-texto">Cierre y reflexión final</span>
+        </li>
+      </ol>
+      <p class="grupales-timeline-nota">No es necesario tener experiencia previa ni compartir nada que no desees. Cada persona vive la experiencia a su manera.</p>
+    </div>
+
+    <!-- Beneficios -->
+    <div class="grupales-bloque">
+      <h3 class="grupales-bloque-titulo">Beneficios que suelen compartir los participantes</h3>
+      <ul class="grupales-beneficios-grid">
+        <li class="grupales-beneficio"><span class="grupales-check">✓</span>Más calma mental</li>
+        <li class="grupales-beneficio"><span class="grupales-check">✓</span>Menor sensación de estrés</li>
+        <li class="grupales-beneficio"><span class="grupales-check">✓</span>Mayor claridad emocional</li>
+        <li class="grupales-beneficio"><span class="grupales-check">✓</span>Sensación de bienestar</li>
+        <li class="grupales-beneficio"><span class="grupales-check">✓</span>Más energía y vitalidad</li>
+        <li class="grupales-beneficio"><span class="grupales-check">✓</span>Reconexión con uno mismo</li>
+      </ul>
+    </div>
+
+    <!-- Modalidades -->
+    <div class="grupales-bloque">
+      <h3 class="grupales-bloque-titulo">Modalidades disponibles</h3>
+      <div class="grupales-modalidades-grid">
+        <div class="grupales-modalidad">
+          <h4 class="grupales-modalidad-titulo">Sesión abierta</h4>
+          <p class="grupales-modalidad-texto">Para personas que desean vivir la experiencia por primera vez.</p>
+        </div>
+        <div class="grupales-modalidad">
+          <h4 class="grupales-modalidad-titulo">Grupos privados</h4>
+          <p class="grupales-modalidad-texto">Familias, amigos o colectivos que desean realizar una sesión exclusiva.</p>
+        </div>
+        <div class="grupales-modalidad">
+          <h4 class="grupales-modalidad-titulo">Organizaciones y colectivos</h4>
+          <p class="grupales-modalidad-texto">Programas adaptados para asociaciones, centros cívicos, ayuntamientos y empresas.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="grupales-cta-wrap">
+      <h3 class="grupales-cta-titulo">¿Te gustaría organizar una sesión grupal?</h3>
+      <p class="grupales-cta-texto">Si deseas participar en una próxima sesión o quieres organizar una actividad para tu colectivo u organización, estaré encantada de ayudarte.</p>
+      <div class="grupales-cta-botones">
+        <a href="https://wa.me/34XXXXXXXXX?text=Hola%20Eva%2C%20me%20gustar%C3%ADa%20información%20sobre%20las%20sesiones%20grupales" class="btn btn-primary">Solicitar información</a>
+        <a href="index.html#contacto" class="btn btn-outline">Próximas sesiones</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- FIN SESIONES GRUPALES -->
+
+</main>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/34XXXXXXXXX" class="whatsapp-float" aria-label="Hablar por WhatsApp" title="Escríbeme por WhatsApp" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:90;width:56px;height:56px;border-radius:50%;background:var(--turquesa);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(106,158,196,.35);transition:transform .2s, box-shadow .2s;">
+    <svg viewBox="0 0 24 24" fill="white" style="width:26px;height:26px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <nav class="footer-links" aria-label="Enlaces legales">
+            <a href="/aviso-legal.html">Aviso legal y privacidad</a>
+            <a href="index.html#faq">FAQ</a>
+            <a href="index.html#contacto">Contacto</a>
+        </nav>
+        <p>© 2026 Eva Terapeuta — Sanación energética · Liberación de bloqueos. Barcelona · Garraf · Online.</p>
+        <p class="footer-disclaimer">La LNT® no sustituye tratamientos médicos. Es una terapia complementaria. Método Schwiderski.</p>
+    </div>
+</footer>
+
+<script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+});
+
+// ===== SESIONES GRUPALES — animaciones de entrada =====
+(function () {
+  var animTargets = document.querySelectorAll(
+    '.grupales-card, .grupales-timeline-item'
+  );
+
+  if (!animTargets.length) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var delay = parseInt(entry.target.getAttribute('data-delay') || '0', 10);
+        setTimeout(function () {
+          entry.target.classList.add('visible');
+        }, delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  animTargets.forEach(function (el) { observer.observe(el); });
+})();
+// ===== FIN SESIONES GRUPALES =====
+</script>
+</body>
+</html>
