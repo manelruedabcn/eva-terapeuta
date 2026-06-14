@@ -2089,6 +2089,10 @@ fadeEls.forEach(el => fadeObserver.observe(el));
             a: 'Las sesiones tienen una duración aproximada de <strong>una hora</strong>.'
         },
         {
+            q: '¿Es caro? ¿Hay descuentos o lo cubre el seguro?',
+            a: 'La sesión individual cuesta <strong>60€</strong> (60-75 minutos), sin packs ni permanencia — pagas solo cuando vienes.<br><br>La primera llamada informativa de 15 minutos es gratuita y sin compromiso, así que puedes resolver tus dudas antes de decidir nada.<br><br>Actualmente no trabajo con seguros médicos, ya que la LNT® es una terapia complementaria, no un tratamiento médico.<br><br>Si tienes dudas sobre si esta inversión tiene sentido para tu situación, lo mejor es hablarlo directamente.'
+        },
+        {
             q: '¿Necesito creer en algo para que funcione?',
             a: '<strong>No.</strong><br><br>No es necesario tener conocimientos previos ni compartir ninguna creencia concreta.<br><br>Solo venir con disposición para escucharte y permitirte vivir la experiencia.'
         },
@@ -2213,9 +2217,15 @@ fadeEls.forEach(el => fadeObserver.observe(el));
 
     function showAnswer(index) {
         const faq = faqs[index];
+        var extraCta = '';
+        // Añadir CTA de WhatsApp después de respuestas sobre precio
+        if (faq.q.indexOf('¿Es caro') !== -1) {
+            extraCta = '<a href="https://wa.me/34629764705?text=Hola%20Eva%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n" class="faq-chat-question" target="_blank" rel="noopener" style="background:var(--turquesa);color:#fff;font-weight:500;text-align:center;display:block;margin-top:.75rem;">💬 Hablar con Eva por WhatsApp</a>';
+        }
         const html =
             '<button class="faq-chat-back" id="faqChatBack">← Volver a preguntas</button>' +
-            '<div class="faq-chat-answer">' + faq.a + '</div>';
+            '<div class="faq-chat-answer">' + faq.a + '</div>' +
+            extraCta;
         body.innerHTML = html;
 
         document.getElementById('faqChatBack').addEventListener('click', function() {
