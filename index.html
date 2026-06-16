@@ -238,6 +238,29 @@
         .nav-links a:hover { color: var(--texto); background: none; text-decoration: none; }
         .nav-cta { display: none; }
 
+        /* Hamburger menu */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            z-index: 3;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--texto);
+            border-radius: 2px;
+            transition: all .3s ease;
+        }
+        .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-toggle.open span:nth-child(2) { opacity: 0; }
+        .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
         /* Hero */
         .hero {
             padding: 10rem 0 5rem;
@@ -1378,10 +1401,15 @@
 <!-- NAV -->
 <nav class="nav" id="nav">
     <div class="nav-inner">
-        <a href="#" class="nav-brand" aria-label="Eva Terapeuta — Inicio">
-            <img src="assets/images/LOGO HOME.png" alt="Eva Terapeuta" class="brand-logo" width="150" height="42">
-        </a>
-        <ul class="nav-links">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+            <a href="#" class="nav-brand" aria-label="Eva Terapeuta — Inicio">
+                <img src="assets/images/LOGO HOME.png" alt="Eva Terapeuta" class="brand-logo" width="150" height="42">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <ul class="nav-links" id="navLinks">
             <li><a href="#como-funciona">Cómo funciona</a></li>
             <li><a href="#herramientas">Herramientas</a></li>
             <li><a href="#testimonios">Testimonios</a></li>
@@ -1993,6 +2021,40 @@ const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 10);
 });
+
+// Hamburger menu toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function() {
+        this.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+    // Cerrar menú al hacer clic en un enlace
+    navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            navToggle.classList.remove('open');
+            navLinks.classList.remove('open');
+        });
+    });
+}
+
+// Hamburger menu toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function() {
+        this.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+    // Cerrar menú al hacer clic en un enlace
+    navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            navToggle.classList.remove('open');
+            navLinks.classList.remove('open');
+        });
+    });
+}
 
 // FAQ toggle
 document.querySelectorAll('.faq-question').forEach(btn => {

@@ -163,6 +163,29 @@
         }
         .nav-links a:hover { color: var(--texto); background: none; text-decoration: none; }
 
+        /* Hamburger menu */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            z-index: 3;
+        }
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--texto);
+            border-radius: 2px;
+            transition: all .3s ease;
+        }
+        .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-toggle.open span:nth-child(2) { opacity: 0; }
+        .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
         /* Hero minimal */
         .hero-mini {
             padding: 10rem 0 3rem;
@@ -215,8 +238,10 @@
             .nav-inner { padding: 1rem 1.5rem 0.5rem; gap: 14px; }
             .nav-brand .brand-logo { height: 63px; }
             .nav-brand { gap: 10px; }
-            .nav-links { gap: 1rem; }
-            .nav-links a { font-size: 0.75rem; }
+            .nav-toggle { display: flex; }
+            .nav-links { display: none; flex-direction: column; width: 100%; gap: 0.5rem; padding: 1rem 0 0.5rem; }
+            .nav-links.open { display: flex; }
+            .nav-links a { display: block; font-size: 0.95rem; padding: 0.6rem 0; text-align: center; }
             .hero-mini { padding: 7.5rem 0 2.5rem; }
         }
 
@@ -499,10 +524,15 @@
 <!-- NAV -->
 <nav class="nav" id="nav">
     <div class="nav-inner">
-        <a href="index.html" class="nav-brand" aria-label="Eva Terapeuta — Inicio">
-            <img src="assets/images/LOGO HOME.png" alt="Eva Terapeuta" class="brand-logo" width="150" height="42">
-        </a>
-        <ul class="nav-links">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+            <a href="index.html" class="nav-brand" aria-label="Eva Terapeuta — Inicio">
+                <img src="assets/images/LOGO HOME.png" alt="Eva Terapeuta" class="brand-logo" width="150" height="42">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="index.html#sobre-mi">Sobre mí</a></li>
             <li><a href="index.html#faq">FAQ</a></li>
@@ -693,6 +723,22 @@ const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 10);
 });
+
+// Hamburger menu toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function() {
+        this.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            navToggle.classList.remove('open');
+            navLinks.classList.remove('open');
+        });
+    });
+}
 
 // ===== SESIONES GRUPALES — animaciones de entrada =====
 (function () {
