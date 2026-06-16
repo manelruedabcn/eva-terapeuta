@@ -800,9 +800,10 @@
             .nav-inner { padding: 1rem 1.5rem 0.5rem; gap: 14px; }
             .nav-brand .brand-logo { height: 63px; }
             .nav-brand { gap: 10px; }
-            .nav-links { gap: 1rem; }
+            .nav-links { gap: 0.6rem; }
             .nav-links a { font-size: 0.75rem; }
             .nav-links a:not(.nav-cta) { display: none; }
+            .hero-badge { font-size: 0.65rem; padding: 0.3rem 0.8rem; max-width: 90vw; white-space: normal; line-height: 1.4; }
             .nav-cta { display: inline-flex; padding: 0.55rem 1.2rem; font-size: 0.85rem; }
             .hero { padding: 7.5rem 0 3.5rem; }
             .hero p.lead { font-size: 1.05rem; }
@@ -1247,6 +1248,16 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
           }
+        }
+
+        @media (max-width: 480px) {
+            .hero-badge { font-size: 0.6rem; padding: 0.25rem 0.6rem; }
+            .hero h1 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+            .hero p.lead { font-size: 0.95rem; }
+            .contacto-form-card { padding: 1.5rem 1rem; }
+            .grupales-cta-wrap { padding: 2rem 1rem; }
+            .grupales-cta-botones { flex-direction: column; }
+            .grupales-cta-botones .btn { width: 100%; justify-content: center; }
         }
 
         /* ===== HERRAMIENTAS ===== */
@@ -2333,9 +2344,10 @@ fadeEls.forEach(el => fadeObserver.observe(el));
         if (steps[key]) steps[key].classList.add('active');
     }
 
-    // Abrir modal desde todos los triggers
-    document.getElementById('heroCtaBtn').addEventListener('click', openModal);
-    document.querySelectorAll('.qualify-trigger').forEach(btn => {
+    // Abrir modal (botón heroCtaBtn fue reemplazado por enlace directo a WhatsApp)
+    var heroBtn = document.getElementById('heroCtaBtn');
+    if (heroBtn) heroBtn.addEventListener('click', openModal);
+    document.querySelectorAll('.qualify-trigger').forEach(function(btn) {
         btn.addEventListener('click', openModal);
     });
 
