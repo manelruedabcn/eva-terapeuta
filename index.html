@@ -68,12 +68,13 @@
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--texto);
             background: var(--blanco);
             line-height: 1.7;
+            overflow-x: hidden;
             font-size: 17px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -209,6 +210,7 @@
             margin: 0 auto;
             padding: 1.5rem 1.5rem 1rem;
             gap: 22px;
+            position: relative;
         }
         .nav-brand {
             display: flex;
@@ -823,9 +825,11 @@
             .nav-inner { padding: 1rem 1.5rem 0.5rem; gap: 14px; }
             .nav-brand .brand-logo { height: 63px; }
             .nav-brand { gap: 10px; }
-            .nav-links { gap: 0.6rem; }
-            .nav-links a { font-size: 0.75rem; }
-            .nav-links a:not(.nav-cta) { display: none; }
+            .nav-toggle { display: flex; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--blanco); padding: 1.2rem 1.5rem 1.8rem; box-shadow: 0 12px 32px rgba(0,0,0,0.07); border-bottom: 1px solid #e8e0d3; max-height: calc(100dvh - 72px); overflow-y: auto; }
+            .nav-links.open { display: flex; }
+            .nav-links a { font-size: 1rem; padding: 0.65rem 0; width: 100%; border-bottom: 1px solid #f4efe6; }
+            .nav-links a.nav-cta { display: inline-flex; margin-top: 0.5rem; width: auto; border-bottom: none; }
             .hero-badge { font-size: 0.65rem; padding: 0.3rem 0.8rem; max-width: 90vw; white-space: normal; line-height: 1.4; }
             .nav-cta { display: inline-flex; padding: 0.55rem 1.2rem; font-size: 0.85rem; }
             .hero { padding: 7.5rem 0 3.5rem; }
@@ -847,8 +851,10 @@
             .contacto-dato { justify-content: center; }
             .whatsapp-float { bottom: 5rem; }
             .cta-mobile { display: block; }
+            .leadmagnet { padding: 2rem 1.2rem; }
             .leadmagnet-form { flex-direction: column; align-items: center; }
-            .leadmagnet-form input[type="email"] { min-width: 100%; }
+            .leadmagnet-form input[type="email"] { min-width: 100%; width: 100%; box-sizing: border-box; }
+            .btn { white-space: normal; }
         }
 
         @media (min-width: 769px) {
@@ -2021,23 +2027,6 @@ const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 10);
 });
-
-// Hamburger menu toggle
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
-if (navToggle && navLinks) {
-    navToggle.addEventListener('click', function() {
-        this.classList.toggle('open');
-        navLinks.classList.toggle('open');
-    });
-    // Cerrar menú al hacer clic en un enlace
-    navLinks.querySelectorAll('a').forEach(function(link) {
-        link.addEventListener('click', function() {
-            navToggle.classList.remove('open');
-            navLinks.classList.remove('open');
-        });
-    });
-}
 
 // Hamburger menu toggle
 const navToggle = document.getElementById('navToggle');
