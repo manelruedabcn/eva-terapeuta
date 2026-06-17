@@ -1,4 +1,4 @@
-68<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -594,6 +594,7 @@
             border-radius: 50px;
             letter-spacing: 0.03em;
             white-space: nowrap;
+            max-width: calc(100% - 2rem);
         }
         .precios-nota {
             text-align: center;
@@ -826,9 +827,9 @@
             .nav-brand .brand-logo { height: 63px; }
             .nav-brand { gap: 10px; }
             .nav-toggle { display: flex; }
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--blanco); padding: 1.2rem 1.5rem 1.8rem; box-shadow: 0 12px 32px rgba(0,0,0,0.07); border-bottom: 1px solid #e8e0d3; max-height: calc(100dvh - 72px); overflow-y: auto; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--blanco); padding: 1.2rem 1.5rem 1.8rem; box-shadow: 0 12px 32px rgba(0,0,0,0.07); border-bottom: 1px solid #e8e0d3; max-height: calc(100vh - 72px); overflow-y: auto; -webkit-overflow-scrolling: touch; }
             .nav-links.open { display: flex; }
-            .nav-links a { font-size: 1rem; padding: 0.65rem 0; width: 100%; border-bottom: 1px solid #f4efe6; }
+            .nav-links a { font-size: 1rem; padding: 0.5rem 0; width: 100%; border-bottom: 1px solid #f4efe6; }
             .nav-links a.nav-cta { display: inline-flex; margin-top: 0.5rem; width: auto; border-bottom: none; }
             .hero-badge { font-size: 0.65rem; padding: 0.3rem 0.8rem; max-width: 90vw; white-space: normal; line-height: 1.4; }
             .nav-cta { display: inline-flex; padding: 0.55rem 1.2rem; font-size: 0.85rem; }
@@ -896,7 +897,7 @@
             width: 360px;
             max-width: calc(100vw - 2rem);
             height: 540px;
-            max-height: calc(100dvh - 10rem);
+            max-height: calc(100vh - 10rem);
             background: var(--blanco);
             border-radius: var(--radio-lg);
             box-shadow: 0 8px 40px rgba(0,0,0,.12);
@@ -1041,10 +1042,11 @@
             .faq-chat-btn span { display: none; }
             .faq-chat-panel {
                 bottom: 5rem;
+                left: .5rem;
                 right: .5rem;
-                width: calc(100vw - 1rem);
+                width: auto;
                 height: 460px;
-                max-height: calc(100dvh - 10rem);
+                max-height: calc(100vh - 10rem);
                 border-radius: var(--radio);
             }
         }
