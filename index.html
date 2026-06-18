@@ -867,7 +867,7 @@
             position: fixed;
             bottom: 5.5rem;
             right: 1.5rem;
-            z-index: 91;
+            z-index: 300;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -893,7 +893,7 @@
             position: fixed;
             bottom: 6.5rem;
             right: 1.5rem;
-            z-index: 92;
+            z-index: 301;
             width: 360px;
             max-width: calc(100vw - 2rem);
             height: 540px;
@@ -1041,12 +1041,12 @@
             }
             .faq-chat-btn span { display: none; }
             .faq-chat-panel {
-                bottom: 5rem;
+                bottom: 5.5rem;
                 left: .5rem;
                 right: .5rem;
                 width: auto;
                 height: 460px;
-                max-height: calc(100vh - 10rem);
+                max-height: calc(100vh - 7rem);
                 border-radius: var(--radio);
             }
         }
@@ -2137,11 +2137,13 @@ const fadeObserver = new IntersectionObserver((entries) => {
 fadeEls.forEach(el => fadeObserver.observe(el));
 
 // ── Chatbot FAQ ──
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
     const btn = document.getElementById('faqChatBtn');
     const panel = document.getElementById('faqChatPanel');
     const close = document.getElementById('faqChatClose');
     const body = document.getElementById('faqChatBody');
+
+    if (!btn || !panel || !close || !body) return;
 
     const faqs = [
         {
@@ -2366,7 +2368,7 @@ fadeEls.forEach(el => fadeObserver.observe(el));
     });
 
     renderQuestions();
-})();
+});
 
 // ── Modal de cualificación ──
 (function() {
