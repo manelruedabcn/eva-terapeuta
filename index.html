@@ -1282,13 +1282,15 @@
         }
 
         @media (max-width: 480px) {
-            .hero-badge { font-size: 0.6rem; padding: 0.25rem 0.6rem; }
+            .hero-badge { font-size: 0.6rem; padding: 0.25rem 0.6rem; max-width: calc(100vw - 3rem); }
             .hero h1 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
             .hero p.lead { font-size: 0.95rem; }
             .contacto-form-card { padding: 1.5rem 1rem; }
+            .contacto-form-card .btn-lg { padding-left: 1rem; padding-right: 1rem; font-size: 1rem; }
             .grupales-cta-wrap { padding: 2rem 1rem; }
             .grupales-cta-botones { flex-direction: column; }
             .grupales-cta-botones .btn { width: 100%; justify-content: center; }
+            .precio-badge { white-space: normal; max-width: calc(100% - 1rem); }
         }
 
         /* ===== HERRAMIENTAS ===== */
@@ -2362,6 +2364,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cerrar al hacer clic fuera
     document.addEventListener('click', function(e) {
         if (panelJustOpened) return;
+        // Si el target ya no está en el DOM (porque un handler reemplazó innerHTML), ignorar
+        if (!document.body.contains(e.target)) return;
         if (panel.classList.contains('open') && !panel.contains(e.target) && e.target !== btn) {
             closePanel();
         }
