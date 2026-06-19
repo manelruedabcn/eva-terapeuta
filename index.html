@@ -1440,7 +1440,7 @@
         <h1>Cuando el cuerpo habla,<br><span>hay que aprender a escucharlo</span></h1>
         <p class="lead">Acompaño procesos de sanación energética y liberación de bloqueos con <strong>Eva</strong>. Estrés, ansiedad, dolores que no desaparecen, creencias que te limitan, agotamiento sin causa clara. Presencial en Barcelona y Garraf. Online para todo el mundo. Sin recetas. Sin promesas vacías. Solo espacio para que tu cuerpo haga lo que sabe hacer.</p>
         <div class="hero-ctas">
-            <a href="https://wa.me/34629764705?text=Hola%20Eva%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Hablar con Eva por WhatsApp</a>
+            <button class="btn btn-primary btn-lg qualify-trigger">Reservar llamada gratuita (15 min)</button>
         </div>
         <div class="hero-trust">
             <span>LNT® · Barras de Access</span>
@@ -1478,7 +1478,7 @@
             </div>
         </div>
         <div style="text-align:center;margin-top:2.5rem;">
-            <a href="https://wa.me/34629764705?text=Hola%20Eva%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n" class="btn btn-primary" target="_blank" rel="noopener">Hablar con Eva por WhatsApp</a>
+            <button class="btn btn-primary qualify-trigger">Reservar llamada gratuita (15 min)</button>
         </div>
     </div>
 </section>
@@ -1544,7 +1544,7 @@
         </div>
 
         <div style="text-align:center;margin-top:2.5rem;">
-            <a href="https://wa.me/34629764705?text=Hola%20Eva%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n" class="btn btn-primary" target="_blank" rel="noopener">Hablar con Eva por WhatsApp</a>
+            <button class="btn btn-primary qualify-trigger">Reservar llamada gratuita (15 min)</button>
         </div>
     </div>
 </section>
@@ -1614,7 +1614,7 @@
             </div>
         </div>
         <div style="text-align:center;margin-top:2.5rem;">
-            <a href="https://wa.me/34629764705?text=Hola%20Eva%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n" class="btn btn-primary" target="_blank" rel="noopener">Hablar con Eva por WhatsApp</a>
+            <button class="btn btn-primary qualify-trigger">Reservar llamada gratuita (15 min)</button>
         </div>
 
         <!-- TESTIMONIOS EN VÍDEO -->
@@ -1989,7 +1989,7 @@
 
 <!-- CTA MOBILE -->
 <div class="cta-mobile">
-    <a href="https://wa.me/34629764705?text=Hola%20Eva%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n" class="btn btn-primary" target="_blank" rel="noopener" style="width:100%;justify-content:center;">Hablar con Eva por WhatsApp</a>
+    <button class="btn btn-primary qualify-trigger" style="width:100%;justify-content:center;">Reservar llamada gratuita (15 min)</button>
 </div>
 
 <!-- FIRMA COR -->
@@ -2181,7 +2181,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     const extraQuestions = [
-        { q: '🤔 ¿Esto es para mí?', action: 'qualify' }
+        { q: '📅 ¿Esto es para mí? Reservar llamada', action: 'qualify' }
     ];
 
     // Preguntas cualificadoras — 3 pasos con bifurcación
@@ -2292,8 +2292,8 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.addEventListener('click', function() {
                 const action = this.getAttribute('data-action');
                 if (action === 'qualify') {
-                    qualifyStep = 0;
-                    showQualifyStep(0);
+                    closePanel();
+                    if (window.openQualifyModal) window.openQualifyModal();
                 }
             });
         });
@@ -2301,20 +2301,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showAnswer(index) {
         const faq = faqs[index];
-        var extraCta = '';
-        // Añadir CTA de WhatsApp después de respuestas sobre precio
-        if (faq.q.indexOf('¿Es caro') !== -1) {
-            extraCta = '<a href="https://wa.me/34629764705?text=Hola%20Eva%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n" class="faq-chat-question" target="_blank" rel="noopener" style="background:var(--turquesa);color:#fff;font-weight:500;text-align:center;display:block;margin-top:.75rem;">💬 Hablar con Eva por WhatsApp</a>';
-        }
+        const cta = '<button class="faq-chat-question" id="faqAnswerCta" style="background:var(--turquesa);color:#fff;font-weight:500;margin-top:.75rem;">📅 Reservar llamada gratuita (15 min)</button>';
         const html =
             '<button class="faq-chat-back" id="faqChatBack">← Volver a preguntas</button>' +
             '<div class="faq-chat-answer">' + faq.a + '</div>' +
-            extraCta;
+            cta;
         body.innerHTML = html;
 
         document.getElementById('faqChatBack').addEventListener('click', function() {
             renderQuestions();
             body.scrollTop = 0;
+        });
+        document.getElementById('faqAnswerCta').addEventListener('click', function() {
+            closePanel();
+            if (window.openQualifyModal) window.openQualifyModal();
         });
         body.scrollTop = 0;
     }
@@ -2386,6 +2386,7 @@ document.addEventListener('DOMContentLoaded', function() {
         overlay.classList.add('open');
         document.body.style.overflow = 'hidden';
     }
+    window.openQualifyModal = openModal;
 
     function closeModal() {
         overlay.classList.remove('open');
